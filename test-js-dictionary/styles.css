@@ -1,25 +1,109 @@
-.searchBar{
-  width: 80%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  border-radius: 18px;
-  background-color: #ffffff;
-  padding: 16px;
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24
 }
 
-.search-icon{
-  color: #dfbed1;
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
 
-#search_button{
+.icon{
+  color: #cc8eb2;
+}
+.icon:hover{
+  color: #9c508b;
+}
+
+.trans_btn{
   outline: none;
   border: none;
   background:transparent;
 }
 
+.searchBar{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  background-color: #eaeaea;
+  padding: 8px;
+}
+
+input:checked+.slider {
+  background-color: #ffffff;
+}
+
+input:checked+.slider:before {
+  transform: translateX(14px);
+}
+
+.slider{
+  cursor: pointer;
+  transition: .4s;
+  border-radius: 34px;
+  transition: .4s;
+}
+
+.slider:before {
+  content: "";
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-button {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.toggle-container {
+  align-items: center;
+}
+
+.selection_container{
+  display: inline-block;
+  outline: none;
+  border: none;
+  background:transparent;
+}
+
+.navBar{
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 24px;
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+}
+
 input{
-  font-size: 20px;
+  font-size: 18px;
   width: 100%;
   outline: none;
   border: none;
@@ -28,17 +112,10 @@ input{
 
 body{
   font-family: sans-serif;
-  background-color: #ffffff;
+  background-color: #d9d9d9;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.container {
-  max-width: 700px;
-  width: 100%;
-  text-align: center;
-  background-color: #9c9a9a;
 }
 
 /* For mobile phones: */
