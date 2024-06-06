@@ -1,9 +1,9 @@
-//document.getElementById('search_input').addEventListener('keypress', function(event){
-//    if(event.key === 13){
-//        event.preventDefault();
-//        document.getElementById("search_button").click();
-//    }
-//});
+document.getElementById('search_input').addEventListener('keypress', function(event){
+    if(event.key === 13){
+        event.preventDefault();
+        document.getElementById("search_button").click();
+    }
+});
 
 document.getElementById('search_button').addEventListener('click', function() {
     const keyword = document.getElementById('search_input').value;
