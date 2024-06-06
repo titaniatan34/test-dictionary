@@ -56,11 +56,13 @@ body{
 
 
 .dark-mode .ejaan-text {
-  color: #fff;
+  color: #1e1e1e;
 }
 
 .ejaan-text {
   color: #9c508b;
+  display: inline;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .meaning-title{
@@ -72,12 +74,20 @@ body{
 .verbNoun{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
+  justify-content: space-between;
 }
 
-h4 {
+h4{
   margin-bottom: 10px;
   text-align: left;
   padding-left: 26px;
+}
+
+.hSyn {
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 26px;
+  padding-bottom: 40px;
 }
 
 h3 {
@@ -93,6 +103,19 @@ h1 {
   text-align: left;
   padding-left: 26px;
 }
+
+
+hr{
+  border-bottom: 1px;
+  border-left: none;
+  border-right: none;
+  max-width:inherit;
+  background-color: none;
+  display: flexbox;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
 
 .keyy{
   font-weight: bold;
@@ -110,8 +133,8 @@ li{
 .audio-control {
   color: #cc8eb2;
   display: flex;
-  justify-content: start;
-  align-items:start;
+  justify-content: flex-start;
+  padding-left: 26px;
 }
 
 .audio-control:hover{

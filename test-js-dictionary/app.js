@@ -13,8 +13,7 @@ const toggleButton = document.querySelector('.toggle_button');
         const toggleDarkMode = () => {
             isDarkMode = !isDarkMode;
             document.body.style.backgroundColor = isDarkMode ? '#333333' : '#f0f0f0';
-            document.body.style.color = isDarkMode ? '#ffffff' : '#333333';
-            toggleButton.innerHTML = isDarkMode ? '<span class="material-symbols-rounded">light_mode</span>' : '<span class="material-symbols-outlined">dark_mode</span>';
+            toggle_button.innerHTML = isDarkMode ? '<span class="material-symbols-rounded">light_mode</span>' : '<span class="material-symbols-outlined">dark_mode</span>';
             darkModeToggle.checked = isDarkMode;
         }
 
@@ -27,20 +26,22 @@ const toggleButton = document.querySelector('.toggle_button');
                 .then(response => response.json())
                 .then(data => {
                     const wordInfo = data[0];
-                    let output = `<h2>${wordInfo.word}</h2>`;
+                    let output = `<p><span class="keyy">${wordInfo.word}</span></p>`;
                     output += `<p><span class="ejaan-text"> ${wordInfo.phonetics[0].text}</span></p>`;
-                    output += `<div class="audio-control"><i class="fa fa-play-circle fa-4x"></i>
-                                    <audio id="audioPlayer" style="display: none;">
-                                        <source src="${wordInfo.phonetics[0].audio}" type="audio/mpeg">
-                                    </audio>
-                                </div>`;
+                    output += `<div class=audio-control><i class="fas fa-play-circle fa-3x"></i>
+                    <audio id="audioPlayer" style="display: none;">
+                        <source src="${wordInfo.phonetics[0].audio}" type="audio/mpeg">
+                        </audio></div>`;
 
-
+                    
                     wordInfo.meanings.forEach(meaning => {
-                        output += `<h3>${meaning.partOfSpeech}</h3>`;
+                        output += `<h3><span class="verbNoun">${meaning.partOfSpeech}</span></h3>
+                        <h4><span class="meaning-title">Meaning</span></h4>`;
                         meaning.definitions.forEach((definition, index) => {
-                            output += `<p>${index + 1}. ${definition.definition} (${definition.example ? 'Example: ' + definition.example : ''})</p>`;
+                            output += `<p><li>${definition.definition} (${definition.example ? 'Example: ' + definition.example : ''})</li></p>`;
                         });
+                        output += `<h4 class="hSyn"><span class="meaning-title">Synonyms</span> <p class="ejaan-text">${(meaning.synonyms).join(", ")} </p></h4>`;
+                        
                     });
 
                     document.getElementById('wordInfo').innerHTML = output;
