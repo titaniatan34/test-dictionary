@@ -1,11 +1,12 @@
-/*document.getElementById('search_input').addEventListener('keypress', function(event){
-    if(event.key === 13){
+
+const toggle_button = document.querySelector('.toggle_button');
+const search_input = document.getElementById('search_input');
+search_input.addEventListener("keypress", function(event){
+    if(event.keyCode === 13){
         event.preventDefault();
         document.getElementById("search_button").click();
     }
-}); //enter to click button  */
-
-const toggleButton = document.querySelector('.toggle_button');
+    });
         const darkModeToggle = document.getElementById('darkModeToggle');
         let isDarkMode = false;
 
